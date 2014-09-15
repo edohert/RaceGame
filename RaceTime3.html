@@ -1,0 +1,49 @@
+<script>
+
+alert("Welcome to the Race!")
+var userDistance = prompt("How many meters should the animals race?", "Enter number here")
+
+
+function Animal(name, speed, focus) {
+    this.name = name;
+    this.speed = speed;
+    this.focus = focus; 
+    this.position = 0;
+    this.isFocused = function() {
+        return Math.floor(Math.random() * 10) < this.focus
+        };
+    this.advance = function() {
+        if (this.isFocused()) {
+            this.position += this.speed;
+            };
+    }   
+    this.progressReport = function() {
+    return this.name + " is at: " + this.position
+    };
+}
+
+var rabbit = new Animal("Jack", 10, 4);
+var turtle = new Animal("Yurtle", 10, 4);
+var mouse = new Animal("Stewart", 10, 4)
+
+while ((rabbit.position < userDistance) && (turtle.position < userDistance) && (mouse.position < userDistance)) {
+    rabbit.advance();
+    turtle.advance();
+    mouse.advance();
+    alert(rabbit.progressReport() + "  " + turtle.progressReport() + "  " + mouse.progressReport());
+}
+
+if (rabbit.position >= userDistance && turtle.position < userDistance && mouse.position <userDistance) {
+    alert("Jack the Rabbit Wins");
+} else if (turtle.position >= userDistance && rabbit.position < userDistance && mouse.position < userDistance) {
+    alert("Yurtle the Turtle Wins!");
+} else if (mouse.position >= userDistance && rabbit.position < userDistance && turtle.position < userDistance) { 
+    alert("Stewart the Mouse Wins!"); 
+} else {
+    alert("It's tie!");
+};
+
+
+
+</script>
+
