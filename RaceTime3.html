@@ -22,23 +22,23 @@ function Animal(name, speed, focus) {
     };
 }
 
-var rabbit = new Animal("Jack", 10, 4);
-var turtle = new Animal("Yurtle", 10, 4);
-var mouse = new Animal("Stewart", 10, 4)
+var rabbit = new Animal("Jack the Rabbit", 10, 4);
+var turtle = new Animal("Yurtle the Turtle", 10, 4);
+var mouse = new Animal("Stewart the Mouse", 10, 4)
 
 while ((rabbit.position < userDistance) && (turtle.position < userDistance) && (mouse.position < userDistance)) {
     rabbit.advance();
     turtle.advance();
     mouse.advance();
-    alert(rabbit.progressReport() + "  " + turtle.progressReport() + "  " + mouse.progressReport());
+    alert(rabbit.progressReport() + " \n" + turtle.progressReport() + "  \n" + mouse.progressReport());
 }
 
 if (rabbit.position >= userDistance && turtle.position < userDistance && mouse.position <userDistance) {
-    alert("Jack the Rabbit Wins");
+    alert(rabbit.name + " Wins");
 } else if (turtle.position >= userDistance && rabbit.position < userDistance && mouse.position < userDistance) {
-    alert("Yurtle the Turtle Wins!");
+    alert(turtle.name + " Wins!");
 } else if (mouse.position >= userDistance && rabbit.position < userDistance && turtle.position < userDistance) { 
-    alert("Stewart the Mouse Wins!"); 
+    alert(mouse.nam + " Wins!"); 
 } else {
     alert("It's tie!");
 };
